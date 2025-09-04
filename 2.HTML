@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arithmetic & Geometric Progression Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f7f7f7;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        section {
+            background-color: #fff;
+            padding: 15px 20px;
+            margin: 15px 0;
+            border-radius: 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #3498db;
+            color: white;
+        }
+        input, button {
+            padding: 6px;
+            margin: 5px 0;
+        }
+        .calculator {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .result {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <h1>Arithmetic & Geometric Progression Project</h1>
+
+    <section>
+        <h2>Introduction</h2>
+        <p>
+            इस प्रोजेक्ट में हमने Arithmetic Progression (AP) और Geometric Progression (GP) के बारे में सीखा। 
+            Arithmetic Progression वह क्रम है जिसमें हर अगला अंक पिछले अंक से एक समान अंतर (Common Difference) से बढ़ता है। 
+            Geometric Progression वह क्रम है जिसमें हर अगला अंक पिछले अंक का एक समान अनुपात (Common Ratio) होता है। 
+            इस प्रोजेक्ट से हमारी गणितीय सोच और चिकाटी (Perseverance) बढ़ी है।
+        </p>
+    </section>
+
+    <section>
+        <h2>Formulas</h2>
+        <p><strong>Arithmetic Progression (AP):</strong></p>
+        <ul>
+            <li>nवीं संख्या: a<sub>n</sub> = a + (n-1)d</li>
+            <li>n तत्वों का योग: S<sub>n</sub> = n/2 * [2a + (n-1)d]</li>
+        </ul>
+        <p><strong>Geometric Progression (GP):</strong></p>
+        <ul>
+            <li>nवीं संख्या: a<sub>n</sub> = a × r<sup>n-1</sup></li>
+            <li>n तत्वों का योग: S<sub>n</sub> = a × (r<sup>n</sup> - 1) / (r - 1), r ≠ 1</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Examples</h2>
+        <table>
+            <tr>
+                <th>Type</th>
+                <th>Sequence</th>
+                <th>Formula</th>
+                <th>Sum</th>
+            </tr>
+            <tr>
+                <td>AP</td>
+                <td>2, 5, 8, 11, 14</td>
+                <td>a<sub>n</sub> = 2 + (n-1)*3</td>
+                <td>S<sub>5</sub> = 35</td>
+            </tr>
+            <tr>
+                <td>GP</td>
+                <td>3, 6, 12, 24, 48</td>
+                <td>a<sub>n</sub> = 3 × 2<sup>n-1</sup></td>
+                <td>S<sub>5</sub> = 93</td>
+            </tr>
+        </table>
+    </section>
+
+    <section class="calculator">
+        <h2>Interactive Calculator</h2>
+        <p><strong>AP Calculator:</strong></p>
+        <input type="number" id="ap-a" placeholder="First term (a)">
+        <input type="number" id="ap-d" placeholder="Common difference (d)">
+        <input type="number" id="ap-n" placeholder="Number of terms (n)">
+        <button onclick="calculateAP()">Calculate AP Sum</button>
+        <div id="ap-result" class="result"></div>
+
+        <p><strong>GP Calculator:</strong></p>
+        <input type="number" id="gp-a" placeholder="First term (a)">
+        <input type="number" id="gp-r" placeholder="Common ratio (r)">
+        <input type="number" id="gp-n" placeholder="Number of terms (n)">
+        <button onclick="calculateGP()">Calculate GP Sum</button>
+        <div id="gp-result" class="result"></div>
+    </section>
+
+    <section>
+        <h2>Conclusion</h2>
+        <p>
+            इस प्रोजेक्ट से मैंने formulas बनाने और sequences calculate करने का तरीका सीखा। 
+            मेरी Mathematical Perseverance बढ़ी और अब मैं AP और GP problems को confidently solve कर सकती हूँ। 
+            यह ज्ञान मेरे आगे के studies और real life में बहुत useful रहेगा।
+        </p>
+    </section>
+
+    <script>
+        // Corrected AP Calculator
+        function calculateAP() {
+            var a = parseFloat(document.getElementById('ap-a').value);
+            var d = parseFloat(document.getElementById('ap-d').value);
+            var n = parseInt(document.getElementById('ap-n').value);
+
+            if(isNaN(a) || isNaN(d) || isNaN(n)) {
+                alert("कृपया सभी AP के मान सही से भरें");
+                return;
+            }
+
+            var sum = (n/2) * (2*a + (n-1)*d);
+            document.getElementById('ap-result').innerText = "Sum of AP = " + sum;
+        }
+
+        // Corrected GP Calculator
+        function calculateGP() {
+            var a = parseFloat(document.getElementById('gp-a').value);
+            var r = parseFloat(document.getElementById('gp-r').value);
+            var n = parseInt(document.getElementById('gp-n').value);
+
+            if(isNaN(a) || isNaN(r) || isNaN(n)) {
+                alert("कृपया सभी GP के मान सही से भरें");
+                return;
+            }
+
+            var sum;
+            if(r === 1){
+                sum = a * n;
+            } else {
+                sum = a * (Math.pow(r,n) - 1)/(r - 1);
+            }
+
+            document.getElementById('gp-result').innerText = "Sum of GP = " + sum;
+        }
+    </script>
+</body>
+</html>
