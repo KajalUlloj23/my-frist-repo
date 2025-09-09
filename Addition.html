@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>वजाबाकी</title>
+</head>
+<body>
+  <h3>वजाबाकी करा</h3>
+  पहिली संख्या: <input id="num1" type="number"><br><br>
+  दुसरी संख्या: <input id="num2" type="number"><br><br>
+  <button onclick="sub()">वजा करा</button>
+  <p id="result"></p>
+
+  <script>
+    function sub() {
+      var a = document.getElementById("num1").value;
+      var b = document.getElementById("num2").value;
+      var c = a - b;
+      document.getElementById("result").innerHTML = "निकाल: " + c;
+    }
+  </script>
+</body>
+</html>
