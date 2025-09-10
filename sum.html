@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>बेरीज कॅल्क्युलेटर</title>
+</head>
+<body>
+  <h2>दोन संख्यांची बेरीज</h2>
+
+  <input type="number" id="num1" placeholder="पहिली संख्या">
+  <input type="number" id="num2" placeholder="दुसरी संख्या">
+  <button onclick="addNumbers()">बेरीज करा</button>
+
+  <p>उत्तर: <span id="result"></span></p>
+
+  <script>
+    function addNumbers() {
+      let a = parseFloat(document.getElementById("num1").value);
+      let b = parseFloat(document.getElementById("num2").value);
+      let sum = a + b;
+      document.getElementById("result").innerText = sum;
+    }
+  </script>
+</body>
+</html>
